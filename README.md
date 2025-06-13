@@ -8,3 +8,4 @@ Realizei a criação da tabela 'stg_prontuario.paciente' de forma sua estrutura 
 
 Problema 2
 
+Desenvolvi os comandos de inserção dos multiplos dados dos schemas dos hospitais para a tabela paciente, utilizei os comandos 'INSERT INTO' e 'SELECT' para a realização da inserção, executei os comandos de maneira distinta para cada schema hospitalar, isso para uma maior clareza e controle. Esse é um comando simples e eficiente que resolve o problema 2.
