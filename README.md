@@ -34,3 +34,19 @@ O código realiza a leitura dos layouts SIGTAP, cria as tabelas de forma dinâmi
 
 Obs: Para todo o processo de realização do problema 5, foi utilizado o banco de dados ```mysql``` como referência para a criação de tabelas, envio dos dados e realização de testes.
 
+## Problema 6
+
+O código para a realização do problema 6 foca no objetivo do problema proposto, defini a latitude e longitude exata das coordenadas do rio de janeiro, realizei a montagem da URL da api com os parâmetros necessários para trazer a pressão atmosférica por hora utilizando ```hourly=surface_pressure```. Após isso realizei a extração dos dados solicitados e atráves disso fiz a inserção desses dados em um banco de dados mysql local. 
+
+## Problema 7
+
+
+
+
+
+
+
+
+
+
+
