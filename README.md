@@ -14,3 +14,6 @@ Desenvolvi os comandos de inserção dos multiplos dados dos schemas dos hospita
 
 ## Problema 3 
 
+A solução que desenvolvi para o problema 3 foi utilizando o uso do ```select``` juntamente com a função de agregação ```count(*)``` para realizar a contagem das ocorreências fazendo a identificação dos cpfs repetidos, foi utulizado a cláusula ```having``` para aplicar de forma correta os os filtros após o uso do ```group by```, vale mencionar realizei a nomeação dos ```count(*)```para 'quantidade' para um melhor entendimento do que foi solicitado.
+
+## Problema 4
