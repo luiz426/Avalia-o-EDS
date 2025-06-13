@@ -22,7 +22,7 @@ O código para a resolução do problema 4 foi utilizado a função ```row_numbe
 
 ## Problema 5
 
-O código python que desenvolvi para a resolução do problema 5 solicitado realiza leitura dos arquivos _layout.txt que faz a definição das colunas como posição final, inicial e os tipos de dados. permitindo que script feito seja adaptável a mudanças futuras, com isso é garantido que os campos das tabelas sejam interpretados de acordo com o layout oficial. 
+O código python que desenvolvi para a resolução do problema 5 solicitado realiza leitura dos arquivos ```_layout.txt``` que faz a definição das colunas como posição final, inicial e os tipos de dados. permitindo que script feito seja adaptável a mudanças futuras, com isso é garantido que os campos das tabelas sejam interpretados de acordo com o layout oficial. 
 
 A função ```create_table``` realiza a criação de tabelas dinâmicas usando os metadados do layout, isso elimina a necessidade de criar as tabelas manualmente. 
 
