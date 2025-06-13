@@ -17,3 +17,5 @@ Desenvolvi os comandos de inserção dos multiplos dados dos schemas dos hospita
 A solução que desenvolvi para o problema 3 foi utilizando o uso do ```select``` juntamente com a função de agregação ```count(*)``` para realizar a contagem das ocorreências fazendo a identificação dos cpfs repetidos, foi utulizado a cláusula ```having``` para aplicar de forma correta os os filtros após o uso do ```group by```, vale mencionar realizei a nomeação dos ```count(*)```para 'quantidade' para um melhor entendimento do que foi solicitado.
 
 ## Problema 4
+
+O código para a resolução do problema 4 foi utilizado a função ```row_number``` juntamente com o ```partition by``` para realizar a enumeração dos registros de cada cpf, após isso o ```order by``` faz com que os registros recentes tenham o número 1, a cláusula ```where``` filtra apenas o mais recente de cada cpf. Todo esse comando faz com que a solução seja eficiente e entendível resolvendo o problema proposto.
