@@ -24,8 +24,8 @@ pressoes = data["hourly"]["surface_pressure"]
 conn = mysql.connector.connect(
     host="localhost",
     user="root",           
-    password="your password",  
-    database="clima"
+    password="password",  
+    database="name"
 )
 cursor = conn.cursor()
 
