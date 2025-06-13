@@ -19,3 +19,18 @@ A solução que desenvolvi para o problema 3 foi utilizando o uso do ```select``
 ## Problema 4
 
 O código para a resolução do problema 4 foi utilizado a função ```row_number``` juntamente com o ```partition by``` para realizar a enumeração dos registros de cada cpf, após isso o ```order by``` faz com que os registros recentes tenham o número 1, a cláusula ```where``` filtra apenas o mais recente de cada cpf. Todo esse comando faz com que a solução seja eficiente e entendível resolvendo o problema proposto.
+
+## Problema 5
+
+O código python que desenvolvi para a resolução do problema 5 solicitado realiza leitura dos arquivos _layout.txt que faz a definição das colunas como posição final, inicial e os tipos de dados. permitindo que script feito seja adaptável a mudanças futuras, com isso é garantido que os campos das tabelas sejam interpretados de acordo com o layout oficial. 
+
+A função ```create_table``` realiza a criação de tabelas dinâmicas usando os metadados do layout, isso elimina a necessidade de criar as tabelas manualmente. 
+
+Utilizei função ```load_data``` que garente com que apenas os registros validos sejam inseridos evitando problemas de consistência. 
+
+Defini uma ordem de prioridade no envio dos dados para as tabelas do banco de dados utilizado, isso foi feito devido a erros e falhas de ```foreign key``` garantindo que as dependências sejam respeitadas.
+
+O código realiza a leitura dos layouts SIGTAP, cria as tabelas de forma dinâmica utilizando como referência o padrão DATASUS fornecido, lê os arquivos de dados corretamente, mantém a integrdade referêncial entre as tabelas e realiza a automatização de todo o processo de carga para o schema staging solicitado pelo problema 5.
+
+Obs: Para todo o processo de realização do problema 5, foi utilizado o banco de dados ```mysql``` como referência para a criação de tabelas, envio dos dados e realização de testes.
+
