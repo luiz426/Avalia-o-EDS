@@ -5,7 +5,6 @@ CREATE TABLE stg_atendimentos (
     medico_id INT
 );
 
--- Tabela de exames solicitados
 CREATE TABLE stg_exames_solicitados (
     exame_id INT PRIMARY KEY,
     atendimento_id INT,
