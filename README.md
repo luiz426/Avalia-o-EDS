@@ -52,9 +52,5 @@ Para solucionar o problema nove utilizei a classe ```counter``` que tem a funç�
 
 ## Problema 10 
 
-
-
-
-
-
+Aqui no problema 10 realizei a estrutura da função e dos parâmetros utilizando o ```gerar_grafico(lista_datas, nome_arquivo)``` que permite reutilizar a função para diferentes conjuntos de dados e mantém uma melhor organização da entrada dos dados, utilizei novamente o counter para o processamento dos dados e contagem das ocorrências de cada data, implementei também o ```tight_layout()``` para evitar a sobreposição dos elementos e o ```savefig()``` como ponto importante que evita o acúmulo de memoria para as aplicações com muitos gráficos gerados.
 
