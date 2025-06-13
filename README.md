@@ -44,6 +44,10 @@ Para a resolução do problema 7 realizei a modelagem da estrutura das tabelas `
 
 ## Problema 8 
 
+Para o problema 8 fiz uma consulta utilizando uma subconsulta para realizar a contagem de quantas prescrições cada atendimento do tipo de urgência (U) possui, a consulta principal faz o calculo da média das contagens e arrendonda com o uso do ```ROUND``` para 2 casas decimais.
+
+## Problema 9 
+
 
 
 
