@@ -1,4 +1,4 @@
-# Avalição-desafios-EDS
+# Avaliação-desafios-EDS
 
 Comentários pertinentes aos desafios realizados
 
