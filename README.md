@@ -48,7 +48,9 @@ Para o problema 8 fiz uma consulta utilizando uma subconsulta para realizar a co
 
 ## Problema 9 
 
+Para solucionar o problema nove utilizei a classe ```counter``` que tem a função de realizar a contagem de quantas vezes cada elemento aparece em uma sequência, após isso fiz a comparação direta para cada medicamento da prescrição e logo depois os exemplos de teste.
 
+## Problema 10 
 
 
 
