@@ -2,23 +2,13 @@
 
 Comentários pertinentes aos desafios realizados
 
+**Observação:** Todo o processo foi realizado utilizando o banco de dados MySQL como referência para criação, testes e carga de dados.
+
 ## Problema 1
 
 Realizei a criação da tabela `stg_prontuario.paciente` de forma que sua estrutura permanecesse compatível com os dados originais, evitando possíveis conflitos durante a integração dos dados solicitados. Após a criação da tabela, executei os comandos de inserção dos dados a partir dos schemas dos hospitais mencionados, inserindo os dados dos três hospitais na tabela `paciente`, conforme solicitado.
 
 **Observação:** Foi feita uma pequena alteração na estrutura da tabela de pacientes, pois o tipo `INT` utilizado para armazenar o CPF limitava sua inserção. Considerando que o CPF possui 11 dígitos, o `INT` não comportava esse valor adequadamente. Por isso, alterei o tipo para `CHAR`, que é uma abordagem mais apropriada, já que os números possuem tamanho fixo.
-
-## Problema 2
-
-Desenvolvi os comandos de inserção dos múltiplos dados dos schemas hospitalares para a tabela `paciente`, utilizando os comandos `INSERT INTO` e `SELECT`. Realizei a inserção de forma separada para cada schema hospitalar, a fim de proporcionar maior clareza e controle. Essa abordagem, simples e eficiente, resolve corretamente o problema 2.
-
-## Problema 3
-
-A solução que desenvolvi para o problema 3 utilizou o comando `SELECT` em conjunto com a função de agregação `COUNT(*)` para realizar a contagem das ocorrências, identificando os CPFs duplicados. Utilizei a cláusula `HAVING` para aplicar os filtros de forma correta após o uso do `GROUP BY`. Vale mencionar que nomeei o `COUNT(*)` como `quantidade`, para facilitar a compreensão do resultado.
-
-## Problema 4
-
-No problema 4, utilizei a função `ROW_NUMBER()` combinada com `PARTITION BY` para enumerar os registros de cada CPF. Em seguida, o `ORDER BY` garantiu que os registros mais recentes fossem atribuídos com o número 1. Por fim, a cláusula `WHERE` foi utilizada para filtrar apenas o registro mais recente de cada CPF. Esse comando torna a solução eficiente e compreensível, atendendo ao que foi proposto.
 
 ## Problema 5
 
@@ -38,19 +28,9 @@ O código, portanto:
 * Mantém a integridade referencial entre as tabelas,
 * Automatiza todo o processo de carga para o schema `staging`.
 
-**Observação:** Todo o processo foi realizado utilizando o banco de dados MySQL como referência para criação, testes e carga de dados.
-
 ## Problema 6
 
-A solução para o problema 6 foi focada no objetivo proposto. Defini as coordenadas exatas (latitude e longitude) da cidade do Rio de Janeiro e montei a URL da API com os parâmetros necessários para trazer os dados de pressão atmosférica por hora, utilizando `hourly=surface_pressure`. Após isso, extraí os dados solicitados e realizei a inserção em um banco de dados MySQL local.
-
-## Problema 7
-
-Para a resolução do problema 7, modelei as tabelas `stg_atendimentos` e `stg_exames_solicitados`, estruturando-as de forma que a tabela `stg_exames_solicitados` estivesse corretamente relacionada à tabela principal `stg_atendimentos`, por meio de chaves estrangeiras. Isso garantiu a relação de 1\:N conforme solicitado, assegurando a integridade e a estrutura correta dos dados.
-
-## Problema 8
-
-No problema 8, desenvolvi uma consulta utilizando subconsulta para contar quantas prescrições cada atendimento do tipo urgência (`U`) possui. A consulta principal calcula a média dessas contagens e utiliza a função `ROUND` para arredondar o resultado para duas casas decimais.
+Defini as coordenadas exatas (latitude e longitude) da cidade do Rio de Janeiro e montei a URL da API com os parâmetros necessários para trazer os dados de pressão atmosférica por hora, utilizando `hourly=surface_pressure`. Após isso, extraí os dados solicitados e realizei a inserção em um banco de dados MySQL local.
 
 ## Problema 9
 
