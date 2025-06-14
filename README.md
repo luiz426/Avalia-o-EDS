@@ -1,56 +1,61 @@
-# Avaliação-desafios-EDS
+# Avaliação dos Desafios – EDS
 
 Comentários pertinentes aos desafios realizados
 
-## Problema 1 
+## Problema 1
 
-Realizei a criação da tabela ```stg_prontuario.paciente``` de forma sua estrutura se mantivesse compatível com os dados originais, evitando possiveis conflitos durante a integração dos dados solicitados. Depois de realizar a criação da tabela executei os comandos de inserção dos dados a partir dos schemas dos hospitais solicitados, fazendo assim a inserção dos dados dos três hospitais na tabela paciente como solicitado.
+Realizei a criação da tabela `stg_prontuario.paciente` de forma que sua estrutura permanecesse compatível com os dados originais, evitando possíveis conflitos durante a integração dos dados solicitados. Após a criação da tabela, executei os comandos de inserção dos dados a partir dos schemas dos hospitais mencionados, inserindo os dados dos três hospitais na tabela `paciente`, conforme solicitado.
 
-Obs: Foi feito uma pequena mudança na estrutura da tabela de pacientes, visto que o ```int``` da estrutura da tabela usado para a inserção do cpf estava limitando sua introdução, visto que o cpf possui 11 números e o ```int``` estava bloqueando a entrada dos dados, realizei a mudança do ```int``` para o ```char``` que é a melhor abordagem para o uso do cpf já que os números terão tamanho fixo.
+**Observação:** Foi feita uma pequena alteração na estrutura da tabela de pacientes, pois o tipo `INT` utilizado para armazenar o CPF limitava sua inserção. Considerando que o CPF possui 11 dígitos, o `INT` não comportava esse valor adequadamente. Por isso, alterei o tipo para `CHAR`, que é uma abordagem mais apropriada, já que os números possuem tamanho fixo.
 
 ## Problema 2
 
-Desenvolvi os comandos de inserção dos multiplos dados dos schemas dos hospitais para a tabela paciente, utilizei os comandos ``` INSERT INTO ``` e ```SELECT``` para a realização da inserção, executei os comandos de maneira distinta para cada schema hospitalar, isso para uma maior clareza e controle. Esse é um comando simples e eficiente que resolve o problema 2.
+Desenvolvi os comandos de inserção dos múltiplos dados dos schemas hospitalares para a tabela `paciente`, utilizando os comandos `INSERT INTO` e `SELECT`. Realizei a inserção de forma separada para cada schema hospitalar, a fim de proporcionar maior clareza e controle. Essa abordagem, simples e eficiente, resolve corretamente o problema 2.
 
-## Problema 3 
+## Problema 3
 
-A solução que desenvolvi para o problema 3 foi utilizando o uso do ```select``` juntamente com a função de agregação ```count(*)``` para realizar a contagem das ocorreências fazendo a identificação dos cpfs repetidos, foi utulizado a cláusula ```having``` para aplicar de forma correta os os filtros após o uso do ```group by```, vale mencionar realizei a nomeação dos ```count(*)```para 'quantidade' para um melhor entendimento do que foi solicitado.
+A solução que desenvolvi para o problema 3 utilizou o comando `SELECT` em conjunto com a função de agregação `COUNT(*)` para realizar a contagem das ocorrências, identificando os CPFs duplicados. Utilizei a cláusula `HAVING` para aplicar os filtros de forma correta após o uso do `GROUP BY`. Vale mencionar que nomeei o `COUNT(*)` como `quantidade`, para facilitar a compreensão do resultado.
 
 ## Problema 4
 
-O código para a resolução do problema 4 foi utilizado a função ```row_number``` juntamente com o ```partition by``` para realizar a enumeração dos registros de cada cpf, após isso o ```order by``` faz com que os registros recentes tenham o número 1, a cláusula ```where``` filtra apenas o mais recente de cada cpf. Todo esse comando faz com que a solução seja eficiente e entendível resolvendo o problema proposto.
+No problema 4, utilizei a função `ROW_NUMBER()` combinada com `PARTITION BY` para enumerar os registros de cada CPF. Em seguida, o `ORDER BY` garantiu que os registros mais recentes fossem atribuídos com o número 1. Por fim, a cláusula `WHERE` foi utilizada para filtrar apenas o registro mais recente de cada CPF. Esse comando torna a solução eficiente e compreensível, atendendo ao que foi proposto.
 
 ## Problema 5
 
-O código python que desenvolvi para a resolução do problema 5 solicitado realiza leitura dos arquivos ```_layout.txt``` que faz a definição das colunas como posição final, inicial e os tipos de dados. permitindo que script feito seja adaptável a mudanças futuras, com isso é garantido que os campos das tabelas sejam interpretados de acordo com o layout oficial. 
+O código Python que desenvolvi para a resolução do problema 5 realiza a leitura dos arquivos `_layout.txt`, que definem as colunas (posição inicial, posição final e tipos de dados). Isso torna o script adaptável a futuras alterações, garantindo que os campos das tabelas sejam interpretados conforme o layout oficial.
 
-A função ```create_table``` realiza a criação de tabelas dinâmicas usando os metadados do layout, isso elimina a necessidade de criar as tabelas manualmente. 
+A função `create_table` cria tabelas de forma dinâmica a partir dos metadados do layout, eliminando a necessidade de criação manual.
 
-Utilizei função ```load_data``` que garente com que apenas os registros validos sejam inseridos evitando problemas de consistência. 
+Utilizei também a função `load_data`, que assegura que apenas os registros válidos sejam inseridos, evitando problemas de consistência.
 
-Defini uma ordem de prioridade no envio dos dados para as tabelas do banco de dados utilizado, isso foi feito devido a erros e falhas de ```foreign key``` garantindo que as dependências sejam respeitadas.
+Defini uma ordem de prioridade na carga dos dados para as tabelas do banco, a fim de evitar erros de chave estrangeira (`foreign key`), garantindo o respeito às dependências entre elas.
 
-O código realiza a leitura dos layouts SIGTAP, cria as tabelas de forma dinâmica utilizando como referência o padrão DATASUS fornecido, lê os arquivos de dados corretamente, mantém a integrdade referêncial entre as tabelas e realiza a automatização de todo o processo de carga para o schema staging solicitado pelo problema 5.
+O código, portanto:
 
-Obs: Para todo o processo de realização do problema 5, foi utilizado o banco de dados ```mysql``` como referência para a criação de tabelas, envio dos dados e realização de testes.
+* Lê corretamente os layouts do SIGTAP,
+* Cria as tabelas dinamicamente seguindo o padrão do DATASUS,
+* Realiza a leitura dos arquivos de dados corretamente,
+* Mantém a integridade referencial entre as tabelas,
+* Automatiza todo o processo de carga para o schema `staging`.
+
+**Observação:** Todo o processo foi realizado utilizando o banco de dados MySQL como referência para criação, testes e carga de dados.
 
 ## Problema 6
 
-O código para a realização do problema 6 foca no objetivo do problema proposto, defini a latitude e longitude exata das coordenadas do rio de janeiro, realizei a montagem da URL da api com os parâmetros necessários para trazer a pressão atmosférica por hora utilizando ```hourly=surface_pressure```. Após isso realizei a extração dos dados solicitados e atráves disso fiz a inserção desses dados em um banco de dados mysql local. 
+A solução para o problema 6 foi focada no objetivo proposto. Defini as coordenadas exatas (latitude e longitude) da cidade do Rio de Janeiro e montei a URL da API com os parâmetros necessários para trazer os dados de pressão atmosférica por hora, utilizando `hourly=surface_pressure`. Após isso, extraí os dados solicitados e realizei a inserção em um banco de dados MySQL local.
 
 ## Problema 7
 
-Para a resolução do problema 7 realizei a modelagem da estrutura das tabelas ```stg_atendimentos``` e ```stg_exames_solicitados```, fiz a estruturação das tabelas interligado a tabela principal ```stg_atendimento``` com a tabela dependente ```stg_exames_solicitados```, criando assim as foreign com referências corretas respeitando a relação de 1:N solicitada, garantido a integridade e o correta estruturação dos dados.
+Para a resolução do problema 7, modelei as tabelas `stg_atendimentos` e `stg_exames_solicitados`, estruturando-as de forma que a tabela `stg_exames_solicitados` estivesse corretamente relacionada à tabela principal `stg_atendimentos`, por meio de chaves estrangeiras. Isso garantiu a relação de 1\:N conforme solicitado, assegurando a integridade e a estrutura correta dos dados.
 
-## Problema 8 
+## Problema 8
 
-Para o problema 8 fiz uma consulta utilizando uma subconsulta para realizar a contagem de quantas prescrições cada atendimento do tipo de urgência (U) possui, a consulta principal faz o calculo da média das contagens e arrendonda com o uso do ```ROUND``` para 2 casas decimais.
+No problema 8, desenvolvi uma consulta utilizando subconsulta para contar quantas prescrições cada atendimento do tipo urgência (`U`) possui. A consulta principal calcula a média dessas contagens e utiliza a função `ROUND` para arredondar o resultado para duas casas decimais.
 
-## Problema 9 
+## Problema 9
 
-Para solucionar o problema nove utilizei a classe ```counter``` que tem a função de realizar a contagem de quantas vezes cada elemento aparece em uma sequência, após isso fiz a comparação direta para cada medicamento da prescrição e logo depois os exemplos de teste.
+Para solucionar o problema 9, utilizei a classe `Counter`, que tem a função de contar quantas vezes cada elemento aparece em uma sequência. Após isso, comparei diretamente os medicamentos das prescrições, seguido da inclusão de exemplos de teste.
 
-## Problema 10 
+## Problema 10
 
-Aqui no problema 10 realizei a estrutura da função e dos parâmetros utilizando o ```gerar_grafico(lista_datas, nome_arquivo)``` que permite reutilizar a função para diferentes conjuntos de dados e mantém uma melhor organização da entrada dos dados, utilizei novamente o counter para o processamento dos dados e contagem das ocorrências de cada data, implementei também o ```tight_layout()``` para evitar a sobreposição dos elementos e o ```savefig()``` como ponto importante que evita o acúmulo de memoria para as aplicações com muitos gráficos gerados.
-
+Neste problema, desenvolvi a função `gerar_grafico(lista_datas, nome_arquivo)`, estruturando-a com parâmetros reutilizáveis que permitem aplicá-la a diferentes conjuntos de dados, promovendo melhor organização. Novamente utilizei `Counter` para processar os dados e contar as ocorrências de cada data. Implementei também `tight_layout()` para evitar sobreposição de elementos no gráfico e utilizei `savefig()` como medida importante para evitar acúmulo de memória em aplicações que geram múltiplos gráficos.
