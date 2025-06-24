@@ -47,7 +47,10 @@ def load_data(conn, cursor, table_name, columns, data_path):
     insert_sql = f"INSERT INTO `{table_name}` ({', '.join(col_names)}) VALUES ({placeholders});"
 
     with open(data_path, encoding="latin1") as f:
-        lines = f.readlines()
+        try: 
+            lines = f.readlines()
+        except Exception as e: 
+            print("Erro de leitura")
 
     for line in lines:
         values = []
